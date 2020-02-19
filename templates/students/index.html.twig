@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de candidats{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row mt-5">
+    {% for candidate in candidates %}
+        <div class="col-3 mb-3">
+            
+            <img style="height: auto; width: 100%; display: block;" src="{{ candidate.avatar }}" alt="Card image">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <span class="badge badge-primary py-1 px-1 float-right">id : {{ candidate.moodleid }}</span>
+                    {{ candidate.fullname }}
+                </li>
+                <li class="list-group-item">{{ candidate.email }}</li>
+                <li class="list-group-item text-center">
+                    <a href="/student/{{ candidate.id }}"><button class="btn btn-primary">Profil du candidat</button></a>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
