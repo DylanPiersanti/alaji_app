@@ -22,7 +22,7 @@ class Results
     private $criteria;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $oral;
 
@@ -53,7 +53,7 @@ class Results
         return $this;
     }
 
-    public function getOral(): ?bool
+    public function getOral(): ?int
     {
         return $this->oral;
     }
@@ -65,7 +65,7 @@ class Results
         return $this;
     }
 
-    public function getElearning(): ?string
+    public function getElearning(): ?int
     {
         return $this->elearning;
     }

@@ -30,7 +30,15 @@
     </div>
     <div class="row">
         <div class="jumbotron mt-5 w-100">
-        <button class="btn btn-primary">Ajouter les notes orale</button>
+        <a href="{{path('student_form', {id : student.id})}}">
+            <button class="btn btn-primary mb-2">
+                {% if results[0].oral is empty %}
+                    Ajouter les notes orale
+                {% else %}
+                    Editer les notes orale
+                {% endif %}
+            </button>
+        </a>
             <table class="table table-hover">
                 <thead>
                     <tr>
