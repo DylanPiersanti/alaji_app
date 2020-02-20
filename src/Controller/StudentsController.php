@@ -72,7 +72,24 @@ class StudentsController extends AbstractController
 
             }
             $results = $this->getDoctrine()->getRepository(Results::class)->findBy(['student' => $student]);
-            
+            foreach ($results as $result) {
+
+                $oral = $result->getOral();
+                $test = $result->getElearning();
+                $coefelearning = $result->getCoefelearning();
+                $coefOral = $result->getCoeforal();
+                $average  = $teacherApi->averageResult($test, $coefelearning, $oral, $coefOral);
+
+                $acquis = $teacherApi->acquis($average);
+
+
+                $result->setAverage($average);
+                $result->setAcquis($acquis);
+                $manager = $this->getDoctrine()->getManager();
+                $manager->persist($result);
+                $manager->flush();
+
+            }
         }
 
 

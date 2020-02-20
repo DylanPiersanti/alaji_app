@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5">Mes quiz : </h1>
+    <div class="row">
+        {% for quiz in quizzes %}
+            <div class="col-4">
+                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">
+                        <span class="badge badge-success">id : {{ quiz.moodleid }}</span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="{{ path("students_list") }}">{{ quiz.name }}</a></h4>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    
+</div>
+{% endblock %}

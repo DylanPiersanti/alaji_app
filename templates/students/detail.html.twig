@@ -46,6 +46,8 @@
                         <th scope="col">Déscription</th>
                         <th scope="col">Note elearning</th>
                         <th scope="col">Note oral</th>
+                        <th scope="col">Moyenne générale</th>
+                        <th scope="col">Debrief</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +57,8 @@
                         <td>{{ result.criteria.name }}</td>
                         <td>{{ result.elearning }}</td>
                         <td>{{ result.oral }}</td>
+                        <td>{{ result.average}} %</td>
+                        <td>{{ result.acquis }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

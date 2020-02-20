@@ -36,6 +36,26 @@ class Results
      */
     private $student;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $coeforal;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $coefelearning;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $average;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $acquis;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +105,54 @@ class Results
     public function setStudent(?Students $student): self
     {
         $this->student = $student;
+
+        return $this;
+    }
+
+    public function getCoeforal(): ?float
+    {
+        return $this->coeforal;
+    }
+
+    public function setCoeforal(?float $coeforal): self
+    {
+        $this->coeforal = $coeforal;
+
+        return $this;
+    }
+
+    public function getCoefelearning(): ?float
+    {
+        return $this->coefelearning;
+    }
+
+    public function setCoefelearning(?float $coefelearning): self
+    {
+        $this->coefelearning = $coefelearning;
+
+        return $this;
+    }
+
+    public function getAverage(): ?float
+    {
+        return $this->average;
+    }
+
+    public function setAverage(?float $average): self
+    {
+        $this->average = $average;
+
+        return $this;
+    }
+
+    public function getAcquis(): ?string
+    {
+        return $this->acquis;
+    }
+
+    public function setAcquis(?string $acquis): self
+    {
+        $this->acquis = $acquis;
 
         return $this;
     }
